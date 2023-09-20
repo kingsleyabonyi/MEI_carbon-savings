@@ -177,3 +177,20 @@ select option {
         transform: rotate(360deg);
     }
 }
+
+
+
+@media screen and (max-width: 571px) {
+    /* CSS rules to apply when the screen width is 768 pixels or less */
+    main {
+      width: 100%;
+    }
+
+    .form {
+        width: 100%;
+        justify-content: center;
+        max-width: 400px; 
+        
+      }
+   
+}

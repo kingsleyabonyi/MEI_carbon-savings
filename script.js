@@ -26,7 +26,7 @@ const setSuccess = element => {
 const validateinputs = (hydrogenValue, dieselValue, milleageValue) => {
 
     if (dieselValue === '') {
-        setError(diesel, 'hydrogen is required');
+        setError(diesel, 'diesel is required');
 
     }else {
         setSuccess(diesel)
@@ -34,7 +34,7 @@ const validateinputs = (hydrogenValue, dieselValue, milleageValue) => {
     }
 
     if (hydrogenValue === ''){
-        setError(hydrogen, 'diesel is required')
+        setError(hydrogen, 'hydrogen is required')
     }else{
         setSuccess(hydrogen)
         inputState[1] = true
