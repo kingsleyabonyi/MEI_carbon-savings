@@ -28,20 +28,43 @@ const validateinputs = (hydrogenValue, dieselValue, milleageValue) => {
     if (dieselValue === '') {
         setError(diesel, 'diesel is required');
 
-    }else {
+    
+    }else if (dieselValue < 0 ) {
+        setError(diesel, 'diesel cannot accept a negative input');
+    
+
+    }else if (dieselValue === '/^[A-Za-z]+$/') {
+    setError(diesel, 'diesel cannot accept an alphabet');
+    }
+    else {
         setSuccess(diesel)
         inputState[0] = true
     }
 
     if (hydrogenValue === ''){
         setError(hydrogen, 'hydrogen is required')
-    }else{
+        
+    }else if (hydrogenValue < 0 ) {
+        setError(hydrogen, 'hydrogen cannot accept a negative input');
+    
+
+    }else if (hydrogenValue === '/^[A-Za-z]+$/') {
+    setError(hydrogen, 'hydrogen cannot accept an alphabet');
+    }
+    else{
         setSuccess(hydrogen)
         inputState[1] = true
     }
     if (milleageValue === ''){
         setError(milleage, 'milleage is required')
 
+    }
+    else if (millageValue < 0 ) {
+        setError(millage, 'millage cannot accept a negative input');
+    
+
+    }else if (millageValue === '/^[A-Za-z]+$/') {
+    setError(milleage, 'millage cannot accept an alphabet');
     }else {
         setSuccess(milleage)
         inputState[2] = true
