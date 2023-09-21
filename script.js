@@ -59,11 +59,11 @@ const validateinputs = (hydrogenValue, dieselValue, milleageValue) => {
         setError(milleage, 'milleage is required')
 
     }
-    else if (millageValue < 0 ) {
-        setError(millage, 'millage cannot accept a negative input');
+    else if (milleageValue < 0 ) {
+        setError(milleage, 'millage cannot accept a negative input');
     
 
-    }else if (millageValue === '/^[A-Za-z]+$/') {
+    }else if (milleageValue === '/^[A-Za-z]+$/') {
     setError(milleage, 'millage cannot accept an alphabet');
     }else {
         setSuccess(milleage)

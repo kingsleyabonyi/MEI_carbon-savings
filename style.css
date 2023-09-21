@@ -25,9 +25,11 @@ main {
     border-radius: 4px;
     padding: 20px;
     width: 300px;
-    margin: 20vh auto 0 auto;
+    margin: 10vh auto 0 auto;
     background-color: whitesmoke;
     font-size: 12px;
+    max-width: 400px; 
+
     
 }
 /* label{
@@ -136,6 +138,15 @@ select option {
     margin: 1rem 0 1rem 0;
     padding: 10px;
 }
+.form img {
+    border-radius: 4px;
+    width: 100px;
+    margin-top: 50px;
+    align-content: center;
+    display: flex;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 /* }
 .type-text #model_error,
 .type-text #mill_error,
@@ -180,17 +191,25 @@ select option {
 
 
 
-@media screen and (max-width: 571px) {
+@media screen and (max-width: 600px) {
     /* CSS rules to apply when the screen width is 768 pixels or less */
     main {
       width: 100%;
+      padding: auto;
+
+      
     }
 
     .form {
         width: 100%;
         justify-content: center;
         max-width: 400px; 
+        padding: auto;
         
+      }
+      img {
+        max-width: 100%;
+        height: auto;
       }
    
 }
