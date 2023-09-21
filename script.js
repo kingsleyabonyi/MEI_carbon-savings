@@ -6,6 +6,8 @@ const progress = document.getElementById('progress')
 const result = document.getElementById('result')
 progress.style.display = 'none'
 
+
+
 let inputState = [false, false, false]
 
 const setError = (element, message) => {
@@ -24,17 +26,16 @@ const setSuccess = element => {
     inputControl.classList.remove('error')
 }
 const validateinputs = (hydrogenValue, dieselValue, milleageValue) => {
+    console.log(reg.test(dieselValue))
 
     if (dieselValue === '') {
-        setError(diesel, 'diesel is required');
+        setError(diesel, 'Numerical value for diesel is required');
 
     
     }else if (dieselValue < 0 ) {
-        setError(diesel, 'diesel cannot accept a negative input');
+        setError(diesel, 'diesel cannot accept a negative input'); 
     
 
-    }else if (dieselValue === '/^[A-Za-z]+$/') {
-    setError(diesel, 'diesel cannot accept an alphabet');
     }
     else {
         setSuccess(diesel)
@@ -42,29 +43,24 @@ const validateinputs = (hydrogenValue, dieselValue, milleageValue) => {
     }
 
     if (hydrogenValue === ''){
-        setError(hydrogen, 'hydrogen is required')
+        setError(hydrogen, 'Numerical value for hydrogen is required')
         
     }else if (hydrogenValue < 0 ) {
         setError(hydrogen, 'hydrogen cannot accept a negative input');
     
 
-    }else if (hydrogenValue === '/^[A-Za-z]+$/') {
-    setError(hydrogen, 'hydrogen cannot accept an alphabet');
     }
     else{
         setSuccess(hydrogen)
         inputState[1] = true
     }
     if (milleageValue === ''){
-        setError(milleage, 'milleage is required')
+        setError(milleage, 'Numerical value for milleage is required')
 
     }
     else if (milleageValue < 0 ) {
         setError(milleage, 'millage cannot accept a negative input');
     
-
-    }else if (milleageValue === '/^[A-Za-z]+$/') {
-    setError(milleage, 'millage cannot accept an alphabet');
     }else {
         setSuccess(milleage)
         inputState[2] = true
