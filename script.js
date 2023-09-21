@@ -26,7 +26,7 @@ const setSuccess = element => {
     inputControl.classList.remove('error')
 }
 const validateinputs = (hydrogenValue, dieselValue, milleageValue) => {
-    console.log(reg.test(dieselValue))
+    
 
     if (dieselValue === '') {
         setError(diesel, 'Numerical value for diesel is required');
@@ -36,8 +36,7 @@ const validateinputs = (hydrogenValue, dieselValue, milleageValue) => {
         setError(diesel, 'diesel cannot accept a negative input'); 
     
 
-    }
-    else {
+    }else {
         setSuccess(diesel)
         inputState[0] = true
     }
@@ -49,8 +48,7 @@ const validateinputs = (hydrogenValue, dieselValue, milleageValue) => {
         setError(hydrogen, 'hydrogen cannot accept a negative input');
     
 
-    }
-    else{
+    }else{
         setSuccess(hydrogen)
         inputState[1] = true
     }

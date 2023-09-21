@@ -191,7 +191,7 @@ select option {
 
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 775px) {
     /* CSS rules to apply when the screen width is 768 pixels or less */
     main {
       width: 100%;
