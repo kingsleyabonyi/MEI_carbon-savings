@@ -92,7 +92,7 @@ const calculate = async () =>{
             const response = await fetch('https://micro-energy.onrender.com/api/calc/', params);
             const responseData = await response.json();
             // progress.style.display = 'none'
-            result.innerHTML = `Carbon saved is ${responseData.carbonsavings}Kg`
+            result.innerHTML = `Carbon saved is ${responseData.carbonsavings}kg`
         } catch(err){
             alert(err)
         } finally{
