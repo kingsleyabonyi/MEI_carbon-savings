@@ -46,8 +46,6 @@ const validateinputs = (hydrogenValue, dieselValue, milleageValue) => {
         
     }else if (hydrogenValue < 0 ) {
         setError(hydrogen, 'hydrogen cannot accept a negative input');
-    
-
     }else{
         setSuccess(hydrogen)
         inputState[1] = true
@@ -63,6 +61,7 @@ const validateinputs = (hydrogenValue, dieselValue, milleageValue) => {
         setSuccess(milleage)
         inputState[2] = true
     }
+    console.log(inputState)
 
     if (inputState.includes(false)){
         return false
@@ -75,6 +74,7 @@ const calculate = async () =>{
     const hydrogenValue = hydrogen.value.trim();
     const dieselValue =  diesel.value.trim();
     const milleageValue = milleage.value.trim();
+    
     if (validateinputs(hydrogenValue, dieselValue, milleageValue)){
         const params = {
             method: 'POST',
@@ -93,10 +93,14 @@ const calculate = async () =>{
             const responseData = await response.json();
             // progress.style.display = 'none'
             result.innerHTML = `Carbon saved is ${responseData.carbonsavings}kg`
+            // hydrogen.value = ''
+            // diesel.value = ''
+            // milleage.value = ''
         } catch(err){
             alert(err)
         } finally{
             progress.style.display = 'none'
+            inputState = [false, false, false]
         }
     } 
     // else{
