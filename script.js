@@ -93,9 +93,7 @@ const calculate = async () =>{
             const responseData = await response.json();
             // progress.style.display = 'none'
             result.innerHTML = `Carbon saved is ${responseData.carbonsavings}kg`
-            // hydrogen.value = ''
-            // diesel.value = ''
-            // milleage.value = ''
+           
         } catch(err){
             alert(err)
         } finally{
