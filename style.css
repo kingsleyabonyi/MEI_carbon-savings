@@ -123,6 +123,7 @@ select option {
     border-radius: 4px;
     margin: 1rem 0 1rem 0;
     padding: 10px;
+    cursor: pointer;
     /* font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 20px;
@@ -191,26 +192,28 @@ select option {
 
 
 
-@media screen and (max-width: 775px) {
+@media screen and (max-width: 550px) {
     /* CSS rules to apply when the screen width is 768 pixels or less */
     main {
       width: 100%;
       padding: auto;
+      box-sizing: border-box;
 
       
     }
-    body {
+    /* body {
         width: 100%;
-    }
-    body, html {
+    } */
+    /* body, html {
         overflow-x: auto;
-      }
+      } */
 
     .form {
         width: 100%;
         justify-content: center;
-        max-width: 400px; 
+        max-width:300px; 
         padding: auto;
+        box-sizing: border-box;
         
       }
       img {
