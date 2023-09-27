@@ -195,7 +195,7 @@ select option {
 
 
 @media screen and (max-width: 550px) {
-    /* CSS rules to apply when the screen width is 768 pixels or less */
+    /* CSS rules to apply when the screen width is 560 pixels or less */
     main {
       width: 100%;
       padding: auto;
