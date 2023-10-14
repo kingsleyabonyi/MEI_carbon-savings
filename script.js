@@ -4,11 +4,24 @@ const diesel = document.getElementById('model');
 const milleage = document.getElementById('use')
 const progress = document.getElementById('progress')
 const result = document.getElementById('result')
+const fname = document.getElementById('fname')
+const lname = document.getElementById('lname')
+const email = document.getElementById('email')
+const username = document.getElementById('username')
+const pass1 = document.getElementById('pass1')
+const pass2 = document.getElementById('pass2')
+const btn = document.getElementById('btn-2')
+const butt = document.getElementById('btn-3')
+
+
+
 progress.style.display = 'none'
 
 
 
 let inputState = [false, false, false]
+let isValid = true;
+
 
 const setError = (element, message) => {
     const inputControl = element.parentElement;
@@ -25,7 +38,44 @@ const setSuccess = element => {
     inputControl.classList.add('success');
     inputControl.classList.remove('error')
 }
-const validateinputs = (hydrogenValue, dieselValue, milleageValue) => {
+
+const validate = ( lastValue, firstValue, email, username, pass1) => {
+
+
+ if (lastValue < 3){
+        setError(lname, 'Name must be at least 3 characters.');
+
+    }else{
+        setSuccess(lname)
+    }
+
+    if (firstValue < 3){
+        setError(fname, 'Name must be at least 3 characters.');
+
+    }else{
+        setSuccess(fname)
+    }
+
+    // if (!username.includes())
+
+    if (!email.includes("@")) {
+        setError(email, 'Invalid email address');
+    }else{
+        setSuccess(email)
+    }
+
+    if (password.length < 8) {
+       setError(pass1, 'Password must be at least 8 characters');
+    }else{
+        setSuccess(pass1)
+    }
+    return isValid;
+}
+
+
+const validateinputs = (hydrogenValue, dieselValue, milleageValue,) => {
+
+   
     
 
     if (dieselValue === '') {
@@ -70,6 +120,8 @@ const validateinputs = (hydrogenValue, dieselValue, milleageValue) => {
     }
     
 }
+
+    
 const calculate = async () =>{
     const hydrogenValue = hydrogen.value.trim();
     const dieselValue =  diesel.value.trim();
@@ -91,7 +143,6 @@ const calculate = async () =>{
             progress.style.display = 'block'
             const response = await fetch('https://micro-energy.onrender.com/api/calc/', params);
             const responseData = await response.json();
-            // progress.style.display = 'none'
             result.innerHTML = `Carbon saved is ${responseData.carbonsavings}kg`
            
         } catch(err){
